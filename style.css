@@ -1,0 +1,170 @@
+* {
+    font-family: 'Kumbh Sans', sans-serif;
+
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    background: rgb(173, 104, 233);
+    background: linear-gradient(180deg, rgba(173, 104, 233, 1) 16%, rgba(102, 99, 230, 1) 78%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100vw;
+}
+
+.parent-container {
+    display: flex;
+    background: white;
+    min-width: 920px;
+    min-height: 511px;
+    align-items: center;
+    border-radius: 13px;
+    position: relative;
+}
+
+.block {
+    max-width: 352px;
+    position: relative;
+    margin-top: 21px;
+    cursor: pointer;
+}
+
+.block p {
+    font-size: 13px;
+    margin-top: -5px;
+    color: #5d5c64;
+    display: none;
+
+}
+
+.block h2 {
+    font-size: 15.5px;
+    font-weight: 400;
+    color: #5d5c64;
+}
+
+.block span {
+    width: 100%;
+    height: 1px;
+    background: #e8e8e8;
+    display: block;
+    margin-top: 21px;
+}
+
+.open h2 {
+    color: black;
+    font-weight: 600;
+}
+
+.open p {
+    display: block;
+    overflow: hidden;
+    height: 0px;
+    animation: show .5s ease forwards;
+
+}
+
+.image-container {
+    overflow: hidden;
+
+}
+
+.image-container img {
+    margin-left: -5.4rem;
+
+}
+
+.content-container {
+    margin-left: 90px;
+}
+
+.block img {
+    position: absolute;
+    left: 94%;
+    top: 6px;
+}
+
+.open img {
+    animation: rotate .5s ease forwards;
+}
+
+.parent-container>img {
+    position: absolute;
+    left: -93px;
+    top: 13rem;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(180deg);
+    }
+
+}
+
+@keyframes show {
+    from {
+        height: 0px;
+    }
+
+    to {
+        height: 50px;
+    }
+
+}
+
+.parent-container::before {
+    content: "";
+    width: 73%;
+    height: 100%;
+    position: absolute;
+    background-image: url(./faq-accordion-card-main/images/bg-pattern-desktop.svg);
+    background-position: -20rem -6rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1012px) {
+    .parent-container {
+        max-width: 382px;
+        min-width: 0;
+        flex-direction: column;
+    }
+
+    .content-container {
+        margin-left: 0px;
+    }
+
+    .parent-container::before {
+        display: none;
+    }
+
+    .parent-container>img {
+        position: absolute;
+        left: 9px;
+        top: 7rem;
+        width: 7rem;
+    }
+
+    .image-container img {
+        margin-left: 0px;
+        width: 21rem;
+    }
+    h1 {
+        text-align: center;
+    }
+    .block {
+        max-width: 299px;
+      
+    }
+}
